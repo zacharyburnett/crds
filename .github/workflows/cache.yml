@@ -50,7 +50,6 @@ jobs:
           key: ${{ steps.key.outputs.key }}
           lookup-only: true
       - if: steps.lookup-combined-cache.outputs.cache-hit != 'true'
-        id: crds-cache-test
         run: |
           git clone https://github.com/spacetelescope/crds-cache-test.git
           mv crds-cache-test ${{ env.CRDS_TEST_ROOT }}
